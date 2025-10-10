@@ -78,7 +78,7 @@ nav a:hover, nav a.active{ color:var(--text); background:rgba(143,191,136,.18)}
 .lead{ font-size: clamp(20px, 2.7vw, 30px); color:#e6f1e8; margin:0 }
 p{ font-size: clamp(18px, 2.3vw, 26px); color:#f3f6f4; margin:0 }
 
-/* Variante “small” para páginas con mucho contenido */
+/* Variante "small" para páginas con mucho contenido */
 .slide.small h1{ font-size: clamp(34px, 5.6vw, 72px) }
 .slide.small p{ font-size: clamp(16px, 2vw, 22px) }
 
@@ -368,42 +368,12 @@ p{ font-size: clamp(18px, 2.3vw, 26px); color:#f3f6f4; margin:0 }
 
 .green{ color:var(--secondary); font-weight:800 }
 
-/* ===== Frases de Calidad y Seguridad con comillas verdes en ambas frases ===== */
+/* ===== Frases de Calidad y Seguridad ===== */
 .frases-calidad-seguridad {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(28px, 4vh, 40px);  /* más espacio entre las dos frases */
-  margin-top: clamp(30px, 6vh, 60px);
-}
-
-/* ===== Frases de Calidad y Seguridad con comillas verdes ajustadas ===== */
-.frases-calidad-seguridad {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: clamp(18px, 2.8vh, 26px); /* menos espacio vertical */
-  margin-top: clamp(20px, 5vh, 40px);
-}
-
-/* =========================================================
-   FRASES DE CALIDAD Y SEGURIDAD — versión responsive elegante
-   ========================================================= */
-.frases-calidad-seguridad {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: clamp(18px, 2.8vh, 26px);
-  margin-top: clamp(20px, 5vh, 40px);
-  text-align: center;
-}
-
-/* ===== Frases de Calidad y Seguridad con comillas equilibradas ===== */
-.frases-calidad-seguridad {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: clamp(14px, 2.2vh, 20px); /* separación justa */
+  gap: clamp(14px, 2.2vh, 20px);
   margin-top: clamp(16px, 4vh, 30px);
   text-align: center;
 }
@@ -426,7 +396,7 @@ p{ font-size: clamp(18px, 2.3vw, 26px); color:#f3f6f4; margin:0 }
 
 /* Comillas verdes translúcidas, más cercanas */
 .lead-quote.unified::before {
-  content: "“";
+  content: "\201C";  /* Comilla de apertura tipográfica " */
   position: absolute;
   left: 0;
   top: -4px;
@@ -533,10 +503,317 @@ p{ font-size: clamp(18px, 2.3vw, 26px); color:#f3f6f4; margin:0 }
     transform: none !important;
   }
 }
-/* Unifica tamaño de frases grandes tipo “reflexión” */
+/* Unifica tamaño de frases grandes tipo "reflexión" */
 .lead.big {
   font-size: clamp(24px, 3.6vw, 40px);
   line-height: 1.4;
   font-weight: 400;
   color: #f3f6f4;
+}
+
+/* =========================================================
+   ADAPTACIÓN PARA DISPOSITIVOS MÓVILES
+   ========================================================= */
+
+@media (max-width: 768px) {
+  
+  /* === NAVBAR MÓVIL === */
+  .navbar {
+    height: auto;
+    min-height: 60px;
+    padding: 8px 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .navbar img {
+    height: 44px;
+    margin-bottom: 6px;
+  }
+  
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  
+  nav a {
+    font-size: 13px;
+    padding: 5px 8px;
+    white-space: nowrap;
+  }
+  
+  /* === AJUSTE DE ALTURA DE ESCENA === */
+  :root {
+    --navh: 100px; /* navbar más alta en móvil */
+  }
+  
+  .slide {
+    padding: 16px 12px;
+    gap: 12px;
+  }
+  
+  /* === TÍTULOS MÓVILES === */
+  .slide h1 {
+    font-size: clamp(28px, 8vw, 42px);
+    line-height: 1.15;
+  }
+  
+  .slide.small h1 {
+    font-size: clamp(24px, 7vw, 36px);
+  }
+  
+  /* === TEXTOS BASE === */
+  .lead {
+    font-size: clamp(16px, 4.5vw, 22px);
+  }
+  
+  p {
+    font-size: clamp(15px, 4vw, 20px);
+  }
+  
+  .slide.small p {
+    font-size: clamp(14px, 3.8vw, 18px);
+  }
+  
+  /* === PORTADA (INDEX.HTML) === */
+  .hero-block.clean {
+    gap: clamp(16px, 3vh, 24px);
+    margin-top: clamp(12px, 2vh, 20px);
+  }
+  
+  .hero-logo-40.big {
+    width: clamp(200px, 65vw, 320px);
+    padding: 8px 10px;
+    margin-top: 0;
+  }
+  
+  .logo-diploma.wide {
+    width: clamp(200px, 65vw, 320px);
+    padding: 8px 10px;
+    margin-top: 0;
+  }
+  
+  .hero-hr.elegant {
+    width: 80%;
+  }
+  
+  /* === FRASES DE CALIDAD Y SEGURIDAD === */
+  .frases-calidad-seguridad {
+    gap: clamp(12px, 2vh, 18px);
+    margin-top: clamp(12px, 3vh, 24px);
+  }
+  
+  .lead-quote.unified {
+    font-size: clamp(16px, 4.2vw, 24px);
+    padding-left: clamp(20px, 4vw, 30px);
+    white-space: normal;
+  }
+  
+  .lead-quote.unified::before {
+    font-size: clamp(32px, 7vw, 48px);
+    top: -2px;
+  }
+  
+  /* === MOTOR DEL CAMBIO === */
+  .motor-block {
+    gap: clamp(10px, 2vh, 16px);
+  }
+  
+  .motor-img {
+    width: clamp(240px, 75vw, 420px);
+    max-height: calc(100svh - var(--navh) - 180px);
+  }
+  
+  .motor-text {
+    font-size: clamp(16px, 4vw, 22px);
+  }
+  
+  /* === FÓRMULA === */
+  .formula-img {
+    width: clamp(280px, 80vw, 500px);
+    max-height: 35vh;
+  }
+  
+  /* === EQUIPO === */
+  .equipo-img {
+    width: clamp(280px, 80vw, 500px);
+    max-height: 35vh;
+  }
+  
+  .lead.big {
+    font-size: clamp(18px, 4.5vw, 28px);
+    margin-top: clamp(12px, 2vh, 20px);
+  }
+  
+  /* === LISTA DE PREGUNTAS - 1 COLUMNA === */
+  .qa {
+    grid-template-columns: 1fr; /* UNA sola columna en móvil */
+    gap: 12px;
+    max-width: 100%;
+  }
+  
+  .qa li {
+    padding: 10px 12px;
+    font-size: clamp(14px, 3.8vw, 18px);
+  }
+  
+  .qa li span {
+    min-width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+  }
+  
+  /* === GALERÍA === */
+  .viewer {
+    width: 95vw;
+    gap: 10px;
+  }
+  
+  .viewport {
+    aspect-ratio: 4/3; /* Más cuadrado en móvil */
+    max-height: calc(100vh - 220px);
+    border-radius: 12px;
+  }
+  
+  /* Controles de navegación más pequeños */
+  .nav {
+    width: 40px;
+    height: 52px;
+    font-size: 28px;
+    border-radius: 10px;
+  }
+  
+  .prev { left: 6px; }
+  .next { right: 6px; }
+  
+  .counter {
+    font-size: 12px;
+    padding: 4px 8px;
+    right: 6px;
+    bottom: 6px;
+  }
+  
+  /* Miniaturas más pequeñas */
+  .thumbs {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 6px;
+    padding: 6px 0;
+  }
+  
+  .thumb img,
+  .thumb-video {
+    height: 50px;
+  }
+  
+  .thumb-video {
+    font-size: 20px;
+  }
+  
+  /* === PÁGINA INDIVIDUAL DE PREGUNTA === */
+  .qtag {
+    left: 12px !important;
+    top: 8px !important;
+    padding: 6px 10px !important;
+    font-size: clamp(13px, 3.5vw, 16px) !important;
+  }
+  
+  .motor-block .icon-qs {
+    width: clamp(120px, 35vw, 180px);
+    margin-bottom: clamp(20px, 4vh, 36px) !important;
+  }
+  
+  .motor-block .ctx-top {
+    max-width: 95%;
+    font-size: clamp(20px, 5vw, 32px) !important;
+    line-height: 1.4 !important;
+    margin-bottom: clamp(20px, 3vh, 32px) !important;
+  }
+  
+  .linea-principal {
+    font-size: clamp(22px, 5.5vw, 34px) !important;
+  }
+  
+  .linea-secundaria {
+    font-size: clamp(16px, 4vw, 22px) !important;
+    margin-top: 6px;
+  }
+  
+  .motor-block .divider {
+    width: 75%;
+    margin: clamp(14px, 2vh, 20px) auto !important;
+  }
+  
+  .motor-block .ctx-bottom {
+    max-width: 95%;
+    font-size: clamp(18px, 4.8vw, 28px) !important;
+    line-height: 1.35 !important;
+    margin-top: clamp(8px, 1.5vh, 14px) !important;
+  }
+  
+  /* Flechas de navegación - Ocultar en móvil */
+  .arrows {
+    display: none;
+  }
+  
+  /* === LOGO FINAL (CIERRE) === */
+  .logo-final {
+    height: 80px;
+    margin-top: 12px;
+  }
+  
+  /* === AJUSTES GENERALES === */
+  .sound-cta {
+    font-size: clamp(12px, 3.5vw, 16px);
+    padding: 10px 14px;
+  }
+  
+  .video-error {
+    padding: 12px;
+    font-size: 14px;
+  }
+  
+  /* Asegurar que SVGs se ajusten */
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Desactivar hover effects en móvil */
+  .motor-img:hover,
+  .equipo-img:hover,
+  .thumb:hover {
+    transform: none;
+  }
+}
+
+/* === MÓVILES MUY PEQUEÑOS (< 380px) === */
+@media (max-width: 380px) {
+  nav a {
+    font-size: 11px;
+    padding: 4px 6px;
+  }
+  
+  .slide h1 {
+    font-size: clamp(24px, 7vw, 32px);
+  }
+  
+  .hero-logo-40.big,
+  .logo-diploma.wide {
+    width: clamp(180px, 70vw, 260px);
+  }
+  
+  .qa li {
+    font-size: 13px;
+  }
+  
+  .lead-quote.unified {
+    font-size: clamp(14px, 4vw, 20px);
+    padding-left: 18px;
+  }
 }
