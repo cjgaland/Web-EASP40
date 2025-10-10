@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Equipo · Valor compartido</title>
+  <link rel="stylesheet" href="assets/css/style-dark.css">
+
+  <style>
+    /* Imagen de red animada */
+    .equipo-img {
+      width: clamp(540px, 68vw, 920px);
+      max-height: 50vh;
+      height: auto;
+      opacity: 0.95;
+      transition: transform .6s ease, opacity .4s ease;
+    }
+    .equipo-img:hover {
+      transform: scale(1.02);
+      opacity: 1;
+    }
+
+    /* Textos grandes coherentes con el resto de páginas */
+    .lead.big {
+      font-size: clamp(24px, 3.6vw, 40px);
+      line-height: 1.4;
+      font-weight: 400;
+      color: #f3f6f4;
+      margin-top: clamp(16px, 2vh, 28px);
+      max-width: none;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- CABECERA COMÚN -->
+  <header class="navbar simplebar">
+    <img src="assets/img/Logo-40A_EASP.jpeg" alt="Logo 40 Aniversario"
+         style="height:54px;border-radius:10px;background:#fff;padding:4px;box-shadow:0 0 10px rgba(0,0,0,.3)">
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="motor.html">Motor PGP</a>
+      <a href="formula.html">Fórmula</a>
+      <a href="equipo.html" class="active">Equipo</a>
+      <a href="preguntas.html">Preguntas</a>
+      <a href="galeria.html">Galería</a>
+      <a href="cierre.html">Cierre</a>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="slide small">
+    <h1 class="reveal fade-up d0">El valor del equipo</h1>
+
+    <div class="stage-content">
+      <section class="motor-block">
+
+        <!-- Imagen SVG animada -->
+        <img src="assets/img/equipo_red.svg" alt="Red de equipo humano" class="equipo-img reveal zoom-soft d1">
+
+<hr class="hero-hr elegant reveal fade-up d2">
+
+<p class="lead reveal fade-up d2" 
+   style="max-width:1000px; font-size:clamp(24px,2.5vw,40px); line-height:1.4; font-weight:300; color:#f3f6f4;">
+  Ninguna pieza, por sí sola, puede mover un sistema.
+  El <span class="sevive">valor real</span> nace cuando las personas se conectan, colaboran y se reconocen.
+</p>
+
+<p class="lead reveal fade-up d3" 
+   style="max-width:1000px; font-size:clamp(24px,2.5vw,40px); line-height:1.4; font-weight:300; color:#f3f6f4;">
+  En un equipo comprometido, <span class="sevive">cada aportación cuenta</span>,
+  cada mirada suma, y cada gesto refuerza la confianza compartida.
+</p>
+
+
+      </section>
+    </div>
+  </main>
+</body>
+</html>

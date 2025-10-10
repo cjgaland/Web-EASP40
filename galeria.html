@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galería · XX edición</title>
+  <link rel="stylesheet" href="assets/css/style-dark.css">
+</head>
+<body>
+  <!-- CABECERA COMÚN -->
+  <header class="navbar simplebar">
+    <img src="assets/img/Logo-40A_EASP.jpeg" alt="Logo 40 Aniversario"
+         style="height:54px; border-radius:10px; background:#fff; padding:4px; box-shadow:0 0 10px rgba(0,0,0,.3)">
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="motor.html">Motor PGP</a>
+      <a href="formula.html">Fórmula</a>
+      <a href="equipo.html">Equipo</a>
+      <a href="preguntas.html">Preguntas</a>
+      <a href="galeria.html" class="active">Galería</a>
+      <a href="cierre.html">Cierre</a>
+    </nav>
+  </header>
+
+  <main class="slide">
+    <h1>XX edición · Compañerismo</h1>
+
+<div class="viewer" id="viewer" role="region" aria-label="Visor de fotografías y vídeos">
+  <button class="nav prev" aria-label="Anterior" id="btnPrev">‹</button>
+  <div class="viewport" id="viewport"></div>
+  <button class="nav next" aria-label="Siguiente" id="btnNext">›</button>
+  <div class="counter" id="counter" aria-live="polite">1 / 1</div>
+</div>
+
+<div class="thumbs" id="thumbs" role="region" aria-label="Miniaturas"></div>
+
+
+    <!-- JS de la galería (carrusel + miniaturas + soporte de vídeo) -->
+    <script src="assets/js/gallery.js"></script>
+  </main>
+</body>
+</html>
