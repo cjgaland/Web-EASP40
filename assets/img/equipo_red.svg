@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="480" viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Red de equipo</title>
+  <desc id="desc">Red de nodos interconectados, con transparencia y animación de pulso en tonos verde y gris.</desc>
+
+  <style>
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.85; }
+      50%      { transform: scale(1.08); opacity: 1; }
+    }
+    .node circle {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: pulse 3s ease-in-out infinite;
+    }
+    .n0 circle{ animation-delay: 0s; }
+    .n1 circle{ animation-delay: .3s; }
+    .n2 circle{ animation-delay: .6s; }
+    .n3 circle{ animation-delay: .9s; }
+    .n4 circle{ animation-delay: 1.2s; }
+    .n5 circle{ animation-delay: 1.5s; }
+    .n6 circle{ animation-delay: 1.8s; }
+
+    .fade { animation: fadeIn 1s ease-out forwards; opacity: 0; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    @media (prefers-reduced-motion: reduce){
+      .node circle{ animation:none!important; }
+      .fade{ animation:none!important; opacity:1!important; }
+    }
+  </style>
+
+  <defs>
+    <linearGradient id="green" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8FBF88"/>
+      <stop offset="100%" stop-color="#2F6F3E"/>
+    </linearGradient>
+    <linearGradient id="grey" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E6EBE8"/>
+      <stop offset="100%" stop-color="#A9B2A7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Conexiones -->
+  <g stroke="url(#grey)" stroke-width="2" opacity=".35" class="fade">
+    <line x1="200" y1="160" x2="360" y2="240"/>
+    <line x1="200" y1="160" x2="300" y2="100"/>
+    <line x1="360" y1="240" x2="540" y2="200"/>
+    <line x1="540" y1="200" x2="720" y2="280"/>
+    <line x1="540" y1="200" x2="680" y2="120"/>
+    <line x1="360" y1="240" x2="480" y2="320"/>
+    <line x1="480" y1="320" x2="680" y2="120"/>
+    <line x1="680" y1="120" x2="720" y2="280"/>
+  </g>
+
+  <!-- Nodos -->
+  <g opacity=".9">
+    <g class="node n0"><circle cx="200" cy="160" r="28" fill="url(#green)" opacity=".65"/></g>
+    <g class="node n1"><circle cx="300" cy="100" r="22" fill="url(#green)" opacity=".55"/></g>
+    <g class="node n2"><circle cx="360" cy="240" r="34" fill="url(#green)" opacity=".75"/></g>
+    <g class="node n3"><circle cx="540" cy="200" r="40" fill="url(#green)" opacity=".75"/></g>
+    <g class="node n4"><circle cx="480" cy="320" r="26" fill="url(#green)" opacity=".55"/></g>
+    <g class="node n5"><circle cx="680" cy="120" r="30" fill="url(#green)" opacity=".6"/></g>
+    <g class="node n6"><circle cx="720" cy="280" r="36" fill="url(#green)" opacity=".7"/></g>
+  </g>
+</svg>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1100" height="420" viewBox="0 0 1100 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Fórmula del Valor</title>
+  <desc id="desc">(Conocimientos + Habilidades) × Actitud = Valor. Animación secuencial sin superposición.</desc>
+
+  <style>
+    /* Animaciones internas — se aplican al envoltorio externo (.step) */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes glow {
+      0%, 100% { filter: drop-shadow(0 0 0 rgba(143,191,136,0)); }
+      50%      { filter: drop-shadow(0 0 12px rgba(143,191,136,0.8)); }
+    }
+    .step { opacity: 0; animation: fadeUp 1s ease-out forwards; }
+    .d0 { animation-delay: .5s; }
+    .d1 { animation-delay: 1.5s; }
+    .d2 { animation-delay: 2.5s; }
+    .d3 { animation-delay: 3.5s; }
+    .glow { animation: glow 2s ease-in-out 2.2s 2; } /* dos pulsos al final */
+
+    /* Respeto a reducción de movimiento */
+    @media (prefers-reduced-motion: reduce) {
+      .step, .glow { animation: none !important; opacity: 1 !important; transform: none !important; filter: none !important; }
+    }
+  </style>
+
+  <defs>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E6EBE8"/>
+      <stop offset="100%" stop-color="#A9B2A7"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8FBF88"/>
+      <stop offset="100%" stop-color="#2F6F3E"/>
+    </linearGradient>
+    <filter id="soft">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity=".22"/>
+    </filter>
+  </defs>
+
+  <!-- Conocimientos -->
+  <g class="step d0">
+    <g transform="translate(90,100)" filter="url(#soft)">
+      <rect x="0" y="0" rx="16" width="180" height="140" fill="url(#metal)" stroke="#8C9790" stroke-width="3"/>
+      <rect x="18" y="22" rx="8" width="144" height="96" fill="#fff" opacity=".4" stroke="#9AA59C" stroke-width="2"/>
+      <rect x="-10" y="-8" width="20" height="156" rx="10" fill="url(#green)"/>
+      <text x="90" y="175" text-anchor="middle" fill="#8FBF88" font-family="Inter, system-ui" font-weight="700">Conocimientos</text>
+    </g>
+  </g>
+
+  <!-- + -->
+  <text class="step d0" x="320" y="185" font-size="60" fill="rgba(255,255,255,.85)" font-family="Inter, system-ui" font-weight="800">+</text>
+
+  <!-- Habilidades -->
+  <g class="step d1">
+    <g transform="translate(380,100)" filter="url(#soft)">
+      <rect x="0" y="0" rx="16" width="180" height="140" fill="url(#metal)" stroke="#8C9790" stroke-width="3"/>
+      <path d="M40,48 a20,20 0 0 1 28,-28 l16,16 -18,18 12,12 -40,40 -18,-18 40,-40z"
+            fill="url(#green)" stroke="#1F5C33" stroke-width="2" opacity=".95"/>
+      <text x="90" y="175" text-anchor="middle" fill="#8FBF88" font-family="Inter, system-ui" font-weight="700">Habilidades</text>
+    </g>
+  </g>
+
+  <!-- × -->
+  <text class="step d1" x="610" y="185" font-size="60" fill="rgba(255,255,255,.85)" font-family="Inter, system-ui" font-weight="800">×</text>
+
+  <!-- Actitud -->
+  <g class="step d2">
+    <g transform="translate(660,100)" filter="url(#soft)">
+      <rect x="0" y="0" rx="16" width="160" height="140" fill="url(#metal)" stroke="#8C9790" stroke-width="3"/>
+      <text x="80" y="95" text-anchor="middle" fill="url(#green)"
+            font-family="Inter, system-ui" font-size="88" font-weight="900">A</text>
+      <text x="80" y="175" text-anchor="middle" fill="#8FBF88" font-family="Inter, system-ui" font-weight="700">Actitud</text>
+    </g>
+  </g>
+
+  <!-- = -->
+  <text class="step d2" x="850" y="185" font-size="60" fill="rgba(255,255,255,.85)" font-family="Inter, system-ui" font-weight="800">=</text>
+
+  <!-- Valor -->
+  <g class="step d3">
+    <g transform="translate(910,100)" filter="url(#soft)">
+      <circle class="glow" cx="60" cy="70" r="56" fill="url(#green)" stroke="#1F5C33" stroke-width="3"/>
+      <path d="M60,38 l12,24 26,4 -19,18 4,26 -23,-12 -23,12 4,-26 -19,-18 26,-4z"
+            fill="#ffffff" opacity=".9"/>
+      <text x="60" y="175" text-anchor="middle" fill="#8FBF88" font-family="Inter, system-ui" font-weight="700">Valor</text>
+    </g>
+  </g>
+</svg>
