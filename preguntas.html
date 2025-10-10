@@ -3,38 +3,86 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fórmula · Valor Intrínseco</title>
+  <title>Preguntas · Mesa de alumnos</title>
   <link rel="stylesheet" href="assets/css/style-dark.css">
   <style>
-    .formula-img { width: clamp(520px, 70vw, 900px); max-height: 50vh; height: auto; }
+    /* Imagen hero con interrogaciones */
+    .hero-qs{
+      width: clamp(520px, 68vw, 980px);
+      max-height: 54vh;
+      height: auto;
+      opacity:.95;
+      transition: transform .6s ease, opacity .4s ease;
+    }
+    .hero-qs:hover{ transform: scale(1.02); opacity:1; }
+
+    /* Grid de 6 botones tipo píldora */
+    .btn-grid{
+      display:grid; gap: clamp(12px,2.5vh,18px);
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      max-width: 1200px; margin: 0 auto;
+      align-items:center; justify-items:center;
+    }
+    .pill{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: clamp(14px,2.6vh,18px) clamp(16px,3vw,26px);
+      width: 100%;
+      border-radius: 999px;
+      text-decoration:none; text-align:center; font-weight:800;
+      font-size: clamp(16px,2.2vw,22px);
+      color: var(--text);
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow: 0 6px 20px rgba(0,0,0,.25);
+      transition: transform .15s ease, background .2s ease, border-color .2s ease;
+      backdrop-filter: blur(3px);
+    }
+    .pill:hover{
+      transform: translateY(-2px);
+      background: rgba(143,191,136,.16);
+      border-color: rgba(143,191,136,.38);
+    }
+    @media (max-width: 900px){
+      .btn-grid{ grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
+  <!-- Cabecera común -->
   <header class="navbar simplebar">
     <img src="assets/img/Logo-40A_EASP.jpeg" alt="Logo 40 Aniversario"
-         style="height:54px;border-radius:10px;background:#fff;padding:4px;box-shadow:0 0 10px rgba(0,0,0,.3)">
+         style="height:54px; border-radius:10px; background:#fff; padding:4px; box-shadow:0 0 10px rgba(0,0,0,.3)">
     <nav>
       <a href="index.html">Inicio</a>
       <a href="motor.html">Motor PGP</a>
-      <a href="formula.html" class="active">Fórmula</a>
+      <a href="formula.html">Fórmula</a>
       <a href="equipo.html">Equipo</a>
-      <a href="preguntas.html">Preguntas</a>
+      <a href="preguntas.html" class="active">Preguntas</a>
       <a href="galeria.html">Galería</a>
       <a href="cierre.html">Cierre</a>
     </nav>
   </header>
 
-  <main class="slide">
-    <h1>Preguntas clave</h1>
+  <main class="slide small">
+    <h1 class="reveal fade-up d0">Preguntas clave</h1>
+
     <div class="stage-content">
-      <ul class="qa">
-        <li><span>1.</span> ¿Qué me motivó? — <strong>Cuidar procesos es cuidar pacientes.</strong></li>
-        <li><span>2.</span> ¿Cómo fue la experiencia? — <strong>Rigor y cercanía; se aprende haciendo y compartiendo.</strong></li>
-        <li><span>3.</span> ¿Aplicación real? — <strong>AMFE · Mapa de riesgos · Indicadores en Urgencias.</strong></li>
-        <li><span>4.</span> Desarrollo profesional — <strong>Liderazgo práctico: escuchar, implicar, medir y mejorar.</strong></li>
-        <li><span>5.</span> ¿Lo recomiendo? — <strong>Cambia la mirada: de tareas a procesos.</strong></li>
-        <li><span>6.</span> Impacto en una frase — <strong>“La calidad no es papel: es cultura, equipo y acción”.</strong></li>
-      </ul>
+      <section class="motor-block">
+        <!-- Ilustración con interrogaciones animadas -->
+        <img src="assets/img/preguntas_bg.svg" alt="Interrogantes" class="hero-qs reveal zoom-soft d1">
+
+        <hr class="hero-hr elegant reveal fade-up d2">
+
+        <!-- Botones a cada pregunta -->
+        <div class="btn-grid reveal fade-up d3" role="navigation" aria-label="Acceso a preguntas">
+          <a class="pill" href="Preguntas/pregunta1.html">1 · ¿Qué me motivó?</a>
+          <a class="pill" href="Preguntas/pregunta2.html">2 · La experiencia</a>
+          <a class="pill" href="Preguntas/pregunta3.html">3 · Aplicación práctica</a>
+          <a class="pill" href="Preguntas/pregunta4.html">4 · Desarrollo profesional</a>
+          <a class="pill" href="Preguntas/pregunta5.html">5 · ¿Lo recomendaría?</a>
+          <a class="pill" href="Preguntas/pregunta6.html">6 · Una frase final</a>
+        </div>
+      </section>
     </div>
   </main>
 </body>
