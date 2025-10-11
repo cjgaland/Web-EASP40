@@ -4,36 +4,40 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Motor del Cambio · PGP</title>
-  <link rel="stylesheet" href="assets/css/style-dark.css">
+  <link rel="stylesheet" href="assets/css/style-light-professional.css">
   <style>
     /* Ajuste específico de tamaño para esta página */
     .motor-img { width: clamp(360px, 45vw, 520px); max-height: 38vh; }
   </style>
 </head>
 <body>
-  <header class="navbar simplebar">
-    <img src="assets/img/Logo-40A_EASP.jpeg" alt="Logo 40 Aniversario"
-         style="height:54px;border-radius:10px;background:#fff;padding:4px;box-shadow:0 0 10px rgba(0,0,0,.3)">
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="motor.html" class="active">Motor PGP</a>
-      <a href="formula.html">Fórmula</a>
-      <a href="equipo.html">Equipo</a>
-      <a href="preguntas.html">Preguntas</a>
-      <a href="galeria.html">Galería</a>
-      <a href="cierre.html">Cierre</a>
-    </nav>
-  </header>
+  <header class="navbar">
+  <div class="navbar-brand">
+    <img src="assets/img/Logo-40A_EASP.jpeg" alt="EASP 40 Aniversario">
+    <span class="navbar-title">EASP 40 años</span>
+  </div>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="motor.html" class="active">Motor PGP</a>
+    <a href="formula.html">Fórmula</a>
+    <a href="equipo.html">Equipo</a>
+    <a href="preguntas.html">Preguntas</a>
+    <a href="galeria.html">Galería</a>
+    <a href="cierre.html">Cierre</a>
+  </nav>
+</header>
 
-  <main class="slide">
+    <main>
+  <div class="slide">
     <h1 class="reveal fade-up d0">El motor del cambio</h1>
 
     <div class="stage-content">
       <section class="motor-block">
         <!-- Motor: fade + zoom suave -->
+        <div class="image-container-dark">
         <img src="assets/img/motor_clasico_estatico.svg" alt="Motor clásico"
              class="motor-img reveal zoom-soft d1">
-
+        </div>    
         <hr class="hero-hr elegant reveal fade-up d2">
 
         <!-- Mensaje principal -->
@@ -60,6 +64,8 @@
         </p>
       </section>
     </div>
+    </div>
   </main>
+  <script src="assets/js/menu-mobile.js"></script>
 </body>
 </html>
