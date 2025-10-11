@@ -1,0 +1,217 @@
+/* ========================================
+   MODO PRESENTACIÓN - SIN SCROLL
+   ======================================== */
+
+/* Este archivo añade estilos para que las páginas funcionen
+   como diapositivas de presentación, sin necesidad de scroll.
+   
+   CÓMO USAR:
+   Añade esta línea en el <head> de cada HTML DESPUÉS del CSS principal:
+   <link rel="stylesheet" href="assets/css/presentation-mode.css">
+*/
+
+/* ==========================================
+   1. ELIMINAR SCROLL GLOBAL
+   ========================================== */
+
+body, html {
+  overflow: hidden !important;
+  height: 100vh !important;
+  width: 100vw !important;
+}
+
+/* ==========================================
+   2. AJUSTAR SLIDES A LA PANTALLA
+   ========================================== */
+
+.slide {
+  height: 100vh !important;
+  max-height: 100vh !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.slide.small {
+  padding: clamp(60px, 8vh, 100px) clamp(20px, 4vw, 60px) clamp(40px, 6vh, 80px) !important;
+}
+
+/* ==========================================
+   3. AJUSTAR CONTENIDO PARA QUE QUEPA
+   ========================================== */
+
+.stage-content {
+  max-height: calc(100vh - 180px) !important;
+  overflow: visible !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* ==========================================
+   4. REDUCIR TAMAÑOS SI ES NECESARIO
+   ========================================== */
+
+/* Títulos más compactos en modo presentación */
+h1, .tit {
+  margin-top: 0 !important;
+  margin-bottom: clamp(12px, 2vh, 24px) !important;
+}
+
+/* Espaciado más compacto entre elementos */
+.motor-block {
+  gap: clamp(8px, 1.2vh, 14px) !important;
+  margin-top: 0 !important;
+}
+
+/* Iconos/imágenes SVG más pequeños si es necesario */
+.icon-qs, .motor-img, .equipo-img {
+  max-height: 30vh !important;
+  width: auto !important;
+  margin-bottom: clamp(20px, 3vh, 40px) !important;
+}
+
+/* Textos principales ajustados */
+.lead, .ctx-top, .ctx-bottom {
+  font-size: clamp(20px, 2.8vw, 36px) !important;
+  line-height: 1.35 !important;
+  margin-bottom: clamp(16px, 2.5vh, 32px) !important;
+}
+
+.linea-principal {
+  font-size: clamp(26px, 3.5vw, 42px) !important;
+}
+
+.linea-secundaria {
+  font-size: clamp(18px, 2.2vw, 28px) !important;
+}
+
+/* ==========================================
+   5. AJUSTES PARA PÁGINAS DE PREGUNTAS
+   ========================================== */
+
+/* Etiqueta "Pregunta X" más compacta */
+.qtag {
+  top: 8px !important;
+  padding: 6px 12px !important;
+  font-size: clamp(14px, 1.8vw, 16px) !important;
+}
+
+/* Separación entre icono y título */
+body[id^="pregunta"] .icon-qs {
+  margin-bottom: clamp(25px, 4vh, 45px) !important;
+}
+
+body[id^="pregunta"] .tit {
+  margin-top: clamp(8px, 1.5vh, 16px) !important;
+  margin-bottom: clamp(8px, 1.5vh, 16px) !important;
+}
+
+/* Motor-block sin margen negativo en presentación */
+body[id^="pregunta"] .motor-block {
+  margin-top: 0 !important;
+}
+
+/* ==========================================
+   6. AJUSTES PARA PORTADA (INDEX)
+   ========================================== */
+
+.hero-block {
+  gap: clamp(16px, 2.5vh, 32px) !important;
+}
+
+.hero-logo-40 {
+  max-height: 25vh !important;
+}
+
+.logo-diploma {
+  max-height: 20vh !important;
+}
+
+.frases-calidad-seguridad {
+  gap: clamp(12px, 2vh, 24px) !important;
+}
+
+/* ==========================================
+   7. AJUSTES PARA MOTOR/FÓRMULA/EQUIPO
+   ========================================== */
+
+.image-container-dark {
+  max-height: 45vh !important;
+  margin: clamp(20px, 3vh, 40px) auto !important;
+}
+
+.image-container-dark img {
+  max-height: 45vh !important;
+}
+
+/* ==========================================
+   8. NAVBAR EN MODO PRESENTACIÓN
+   ========================================== */
+
+/* Navbar más compacto */
+.navbar {
+  padding: clamp(8px, 1.2vh, 16px) clamp(16px, 3vw, 40px) !important;
+  min-height: auto !important;
+}
+
+.navbar-brand img {
+  height: clamp(36px, 5vh, 48px) !important;
+}
+
+.navbar nav a {
+  font-size: clamp(13px, 1.6vw, 16px) !important;
+  padding: clamp(6px, 1vh, 10px) clamp(10px, 1.5vw, 16px) !important;
+}
+
+/* ==========================================
+   9. AJUSTE DINÁMICO DE ESCALA (OPCIONAL)
+   ========================================== */
+
+/* Si aún así no cabe, escalar todo proporcionalmente */
+@media (max-height: 700px) {
+  .slide {
+    transform: scale(0.9);
+    transform-origin: center center;
+  }
+}
+
+@media (max-height: 600px) {
+  .slide {
+    transform: scale(0.8);
+    transform-origin: center center;
+  }
+}
+
+/* ==========================================
+   10. FLECHAS DE NAVEGACIÓN VISIBLES
+   ========================================== */
+
+.arrows {
+  z-index: 100 !important;
+}
+
+.nav-arrow {
+  opacity: 0.85;
+}
+
+.nav-arrow:hover {
+  opacity: 1;
+}
+
+/* ==========================================
+   NOTAS DE USO
+   ========================================== */
+
+/*
+IMPORTANTE:
+- Este CSS se añade DESPUÉS del CSS principal
+- Activa el "modo presentación" automáticamente
+- Todo el contenido se ajusta para caber en pantalla
+- No se necesita scroll
+- Perfecto para proyectar en salas
+
+Para desactivarlo: simplemente no incluyas este archivo CSS
+*/

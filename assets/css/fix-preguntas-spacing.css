@@ -1,0 +1,131 @@
+/* ========================================
+   CORRECCIÓN PREGUNTAS - ESPACIADO
+   ======================================== */
+
+/* Este archivo corrige la superposición del icono
+   con el título en las páginas de preguntas.
+   
+   CÓMO USAR:
+   Añade DENTRO de la sección <style> de cada pregunta.html
+   O crea un archivo separado y enlázalo.
+*/
+
+/* ==========================================
+   SOLUCIÓN 1: AJUSTAR ESPACIADO VERTICAL
+   ========================================== */
+
+/* Aumentar espacio entre elementos */
+body[id^="pregunta"] .slide.small .stage-content {
+  padding-top: clamp(20px, 3vh, 40px) !important;
+  gap: clamp(20px, 3vh, 40px) !important;
+}
+
+/* Título más separado */
+body[id^="pregunta"] h1.tit {
+  margin-top: clamp(16px, 2.5vh, 32px) !important;
+  margin-bottom: clamp(20px, 3vh, 40px) !important;
+  position: relative;
+  z-index: 2;
+}
+
+/* Icono con más espacio inferior */
+body[id^="pregunta"] .motor-block .icon-qs {
+  margin-top: clamp(20px, 3vh, 40px) !important;
+  margin-bottom: clamp(30px, 5vh, 60px) !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* Motor-block sin margen negativo */
+body[id^="pregunta"] .motor-block {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* ==========================================
+   SOLUCIÓN 2: REORGANIZAR LAYOUT
+   ========================================== */
+
+/* Asegurar que el contenido se centre correctamente */
+body[id^="pregunta"] .slide.small {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  padding-top: clamp(80px, 10vh, 120px) !important;
+}
+
+/* Etiqueta "Pregunta X" que no interfiera */
+body[id^="pregunta"] .qtag {
+  z-index: 10;
+  top: clamp(10px, 2vh, 20px) !important;
+}
+
+/* ==========================================
+   SOLUCIÓN 3: ESPACIADO ESPECÍFICO POR PÁGINA
+   ========================================== */
+
+/* Pregunta 1 - Brújula */
+#pregunta-1 .icon-qs {
+  margin-bottom: clamp(35px, 5.5vh, 65px) !important;
+}
+
+/* Pregunta 2 - Experiencia */
+#pregunta-2 .icon-qs {
+  margin-bottom: clamp(35px, 5.5vh, 65px) !important;
+}
+
+/* Pregunta 3 - Herramientas */
+#pregunta-3 .icon-qs {
+  margin-bottom: clamp(35px, 5.5vh, 65px) !important;
+}
+
+/* Pregunta 4 - Escalera */
+#pregunta-4 .icon-qs {
+  margin-bottom: clamp(35px, 5.5vh, 65px) !important;
+}
+
+/* Pregunta 5 - Pulgar */
+#pregunta-5 .icon-qs {
+  margin-bottom: clamp(35px, 5.5vh, 65px) !important;
+}
+
+/* Pregunta 6 - Comillas */
+#pregunta-6 .icon-qs {
+  margin-bottom: clamp(35px, 5.5vh, 65px) !important;
+}
+
+/* ==========================================
+   ALTERNATIVA: REDUCIR TAMAÑO DEL ICONO
+   ========================================== */
+
+/* Si el espacio es muy limitado, hacer iconos más pequeños */
+@media (max-height: 800px) {
+  body[id^="pregunta"] .motor-block .icon-qs {
+    width: clamp(140px, 18vw, 220px) !important;
+  }
+}
+
+@media (max-height: 700px) {
+  body[id^="pregunta"] .motor-block .icon-qs {
+    width: clamp(120px, 16vw, 190px) !important;
+  }
+}
+
+/* ==========================================
+   TEXTO MÁS COMPACTO SI ES NECESARIO
+   ========================================== */
+
+@media (max-height: 750px) {
+  body[id^="pregunta"] h1.tit {
+    font-size: clamp(32px, 5vw, 48px) !important;
+    margin-bottom: clamp(16px, 2.5vh, 32px) !important;
+  }
+  
+  body[id^="pregunta"] .ctx-top {
+    font-size: clamp(26px, 3.2vw, 40px) !important;
+  }
+  
+  body[id^="pregunta"] .ctx-bottom {
+    font-size: clamp(22px, 3vw, 36px) !important;
+  }
+}
