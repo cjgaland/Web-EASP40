@@ -60,13 +60,18 @@
       transform: translateY(-50%);
     }
 
-    /* Comprimimos el contenido para que quepa todo */
+    //* Comprimimos el contenido para que quepa todo */
     .motor-block { gap: 1.5vh; }
     .icon-qs { max-width: clamp(140px, 18vw, 180px) !important; margin: 1vh auto; }
-    .linea-principal { font-size: clamp(20px, 3vh, 30px); }
-    .linea-secundaria { font-size: clamp(15px, 2.5vh, 18px); }
+    .linea-principal { font-size: clamp(20px, 28vh, 46px); }
+    .linea-secundaria { font-size: clamp(15px, 31vh, 30px); }
     .divider { margin: 1.5vh auto; }
 
+    /* Y AÑADE esta nueva regla para la frase final */
+    .lead.ctx-bottom {
+    font-size: clamp(18px, 3.7vh, 40px) !important;
+    }
+    
     /* RESTAURAMOS LOS ESTILOS DE LAS FLECHAS DE NAVEGACIÓN SÓLO EN PC */
     .arrows {
       display: flex;
