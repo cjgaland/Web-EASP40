@@ -28,6 +28,12 @@
       margin: 0 !important;
     }
 
+    /* Aumentamos el tamaño de la letra de los párrafos finales */
+.motor-block p, section.center p {
+  font-size: clamp(18px, 3.1vh, 25px) !important;
+  line-height: 1.5 !important; /* Mejoramos la separación entre líneas */
+}
+    
     /* 4. LA CLAVE: Limitamos la altura de la imagen */
     .formula-img {
       max-height: 38vh !important; /* Límite de altura para la imagen */
@@ -51,7 +57,7 @@
   </button>
   
   <nav>
-    <a href="index.html" class="active">Inicio</a>
+    <a href="index.html">Inicio</a>
     <a href="motor.html">Motor PGP</a>
     <a href="formula.html" class="active">Fórmula</a>
     <a href="equipo.html">Equipo</a>
