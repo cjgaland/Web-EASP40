@@ -5,7 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>De alumno a compañero de viaje · EASP 40 años</title>
   <link rel="stylesheet" href="assets/css/style-light-professional.css">
-  <link rel="stylesheet" href="assets/css/presentation-mode.css">
+<style>
+  @media (min-width: 769px) {
+    /* 1. Eliminamos el scroll y el padding de main */
+    body { overflow-y: hidden !important; }
+    main { padding: 0 !important; }
+
+    /* 2. Forzamos al .slide a ocupar toda la altura y centrar */
+    .slide {
+      height: calc(100vh - 70px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 2vh;
+      padding-bottom: 2vh;
+    }
+    
+    /* 3. Comprimimos el contenido específico de esta página */
+    .hero-block {
+      padding: 1vh 0 !important; /* Reducimos aún más el espaciado interno */
+    }
+
+    /* 4. LA CLAVE: Limitamos la altura máxima de los logos */
+    .hero-logo-40, .logo-diploma {
+      max-height: 20vh !important; /* Obligamos a que las imágenes no sean demasiado altas */
+      width: auto; /* Para que mantengan la proporción */
+      margin-bottom: 2vh !important; /* Reducimos el margen inferior */
+    }
+
+    .hero-hr {
+      margin: 2vh auto !important;
+    }
+    .frases-calidad-seguridad {
+      margin-top: 2vh !important;
+    }
+    .lead-quote {
+      margin: 1vh 0 !important;
+      font-size: clamp(20px, 2.8vh, 26px); /* Reducimos un poco la fuente */
+    }
+  }
+</style>
 </head>
 <body>
   <header class="navbar">

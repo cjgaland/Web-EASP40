@@ -5,48 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Preguntas · Mesa de alumnos</title>
   <link rel="stylesheet" href="assets/css/style-light-professional.css">
-  <link rel="stylesheet" href="assets/css/presentation-mode.css">
   <style>
-    /* Imagen hero con interrogaciones */
-    .hero-qs{
-      width: clamp(520px, 68vw, 980px);
-      max-height: 54vh;
-      height: auto;
-      opacity:.95;
-      transition: transform .6s ease, opacity .4s ease;
-    }
-    .hero-qs:hover{ transform: scale(1.02); opacity:1; }
+  /* --- ESTILOS ORIGINALES (PARA MÓVIL Y PC) --- */
+  .hero-qs {
+    width: clamp(520px, 68vw, 980px);
+    max-height: 54vh;
+    height: auto;
+    opacity: .95;
+    transition: transform .6s ease, opacity .4s ease;
+  }
+  .hero-qs:hover { transform: scale(1.02); opacity: 1; }
 
-    /* Grid de 6 botones tipo píldora */
-    .btn-grid{
-      display:grid; gap: clamp(12px,2.5vh,18px);
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      max-width: 1200px; margin: 0 auto;
-      align-items:center; justify-items:center;
+  .btn-grid {
+    display: grid;
+    gap: clamp(12px, 2.5vh, 18px);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    justify-items: center;
+  }
+  .pill {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: clamp(14px, 2.6vh, 18px) clamp(16px, 3vw, 26px);
+    width: 100%; border-radius: 999px;
+    text-decoration: none; text-align: center; font-weight: 800;
+    font-size: clamp(16px, 2.2vw, 22px);
+    color: var(--text);
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid rgba(255, 255, 255, .10);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .25);
+    transition: transform .15s ease, background .2s ease, border-color .2s ease;
+    backdrop-filter: blur(3px);
+  }
+  .pill:hover {
+    transform: translateY(-2px);
+    background: rgba(143, 191, 136, .16);
+    border-color: rgba(143, 191, 136, .38);
+  }
+  @media (max-width: 900px) {
+    .btn-grid { grid-template-columns: 1fr; }
+  }
+
+  /* --- MODO PRESENTACIÓN SÓLO PARA PANTALLAS GRANDES --- */
+  @media (min-width: 769px) {
+    /* 1. Eliminamos el scroll y el padding de main */
+    body { overflow-y: hidden !important; }
+    main { padding: 0 !important; }
+
+    /* 2. Forzamos al .slide a ocupar toda la altura y centrar */
+    .slide {
+      height: calc(100vh - 70px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2vh 0;
     }
-    .pill{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding: clamp(14px,2.6vh,18px) clamp(16px,3vw,26px);
-      width: 100%;
-      border-radius: 999px;
-      text-decoration:none; text-align:center; font-weight:800;
-      font-size: clamp(16px,2.2vw,22px);
-      color: var(--text);
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow: 0 6px 20px rgba(0,0,0,.25);
-      transition: transform .15s ease, background .2s ease, border-color .2s ease;
-      backdrop-filter: blur(3px);
+
+    /* 3. Comprimimos el contenido para que todo quepa */
+    .motor-block {
+      gap: 2vh !important;
     }
-    .pill:hover{
-      transform: translateY(-2px);
-      background: rgba(143,191,136,.16);
-      border-color: rgba(143,191,136,.38);
+    .motor-block > * {
+      margin: 0 !important;
     }
-    @media (max-width: 900px){
-      .btn-grid{ grid-template-columns: 1fr; }
+
+    /* 4. LA CLAVE: Limitamos la altura de la imagen y comprimimos la rejilla de botones */
+    .hero-qs {
+      max-height: 40vh !important; /* Límite de altura para la imagen */
     }
-  </style>
+    .btn-grid {
+      gap: 1.5vh !important; /* Reducimos el espacio entre botones */
+    }
+  }
+</style>
 </head>
 <body>
   <!-- Cabecera común -->

@@ -5,10 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fórmula · Valor Intrínseco</title>
   <link rel="stylesheet" href="assets/css/style-light-professional.css">
-  <link rel="stylesheet" href="assets/css/presentation-mode.css">
   <style>
-    .formula-img { width: clamp(520px, 70vw, 900px); max-height: 50vh; height: auto; }
-  </style>
+  @media (min-width: 769px) {
+    /* 1. Eliminamos el scroll y el padding de main */
+    body { overflow-y: hidden !important; }
+    main { padding: 0 !important; }
+
+    /* 2. Forzamos al .slide a ocupar toda la altura y centrar */
+    .slide {
+      height: calc(100vh - 70px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center; /* Centramos todo el texto */
+      padding: 2vh 0;
+    }
+
+    /* 3. Comprimimos el contenido para que todo quepa */
+    .slide h1 {
+      font-size: clamp(30px, 4vh, 44px) !important; /* Hacemos la cita principal más pequeña */
+      margin-bottom: 3vh !important;
+    }
+    .slide .lead {
+      font-size: clamp(18px, 2.5vh, 24px) !important;
+      margin-bottom: 3vh !important;
+    }
+    .slide .logo-final {
+      max-height: 20vh !important; /* Limitamos la altura del logo */
+      width: auto;
+      margin-top: 2vh !important;
+      margin-bottom: 3vh !important;
+    }
+    .slide p:last-of-type {
+      font-size: 16px;
+      color: var(--text-light);
+    }
+  }
+</style>
 </head>
 <body>
   <header class="navbar">
