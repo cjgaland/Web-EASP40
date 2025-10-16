@@ -6,8 +6,39 @@
   <title>Fórmula · Valor Intrínseco</title>
   <link rel="stylesheet" href="assets/css/style-light-professional.css">
   <link rel="stylesheet" href="assets/css/presentation-mode.css">
-  <style>
-    .formula-img { width: clamp(520px, 70vw, 900px); max-height: 50vh; height: auto; }
+<style>
+    /* 1. Eliminamos el espaciado del contenedor <main> */
+    main {
+      padding: 0 !important;
+    }
+
+    /* 2. Forzamos al .slide a ocupar toda la altura y centrarlo todo */
+    .slide {
+      min-height: calc(100vh - 70px); /* Altura de pantalla menos la barra de navegación */
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      padding: 2vh 0 !important; /* Espaciado vertical mínimo y flexible */
+    }
+
+    /* 3. Anulamos TODOS los márgenes de los elementos para controlarlos nosotros */
+    .motor-block > *,
+    section.center > * {
+      margin: 0 !important;
+    }
+
+    /* 4. Usamos 'gap' para crear un espacio pequeño y consistente entre todo */
+    .motor-block,
+    section.center {
+      gap: 1.5vh !important; /* Un espacio muy pequeño que se adapta a la altura de la pantalla */
+    }
+
+    /* 5. Ajuste específico para la imagen de la fórmula */
+    .formula-img { 
+      width: clamp(450px, 60vw, 800px) !important; 
+      max-height: 40vh !important; 
+      height: auto; 
+    }
   </style>
 </head>
 <body>
@@ -27,7 +58,7 @@
   <nav>
     <a href="index.html" class="active">Inicio</a>
     <a href="motor.html">Motor PGP</a>
-    <a href="formula.html">Fórmula</a>
+    <a href="formula.html" class="active">Fórmula</a>
     <a href="equipo.html">Equipo</a>
     <a href="preguntas.html">Preguntas</a>
     <a href="galeria.html">Galería</a>
