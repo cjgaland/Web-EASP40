@@ -7,21 +7,27 @@
   <link rel="stylesheet" href="../assets/css/style-light-professional.css">
   <link rel="stylesheet" href="../assets/css/presentation-mode.css">
   <style>
-    /* Etiqueta "Pregunta 3" arriba izquierda */
+        
+  .slide.small {
+  position: relative;
+  }
+
+    /* Etiqueta "Pregunta 1" arriba izquierda */
     .qtag{
-      position:absolute;
+      position:absolue;
+      z-index: 10;
       left: clamp(16px, 4vw, 40px);
       top: 12px;
-      padding: 8px 14px !important;
-      border-radius: 999px;
+      padding: 5px 10px !important;
+      border-radius: 900;
       background: var(--primary);
       border: 1px solid rgba(47, 111, 62, 0.3);
-      font-weight: 800;
       font-size: clamp(16px, 2vw, 18px) !important;
       color: white;
       letter-spacing: .2px;
       box-shadow: var(--shadow);
     }
+
 
     /* Reducimos espacio bajo el título */
     .slide.small .tit{ 
@@ -191,7 +197,7 @@
   <!-- Cabecera común -->
   <header class="navbar">
   <div class="navbar-brand">
-    <img src="assets/img/Logo-40A_EASP.jpeg" alt="EASP 40 Aniversario">
+    <img src="../assets/img/Logo-40A_EASP.jpeg" alt="EASP 40 Aniversario">
     <span class="navbar-title">EASP 40 años</span>
   </div>
   
@@ -202,12 +208,12 @@
     <span></span>
   </button>
   
-  <nav>
-    <a href="../index.html" class="active">Inicio</a>
+<nav>
+    <a href="../index.html">Inicio</a>
     <a href="../motor.html">Motor PGP</a>
     <a href="../formula.html">Fórmula</a>
     <a href="../equipo.html">Equipo</a>
-    <a href="../preguntas.html">Preguntas</a>
+    <a href="../preguntas.html" class="active">Preguntas</a>
     <a href="../galeria.html">Galería</a>
     <a href="../cierre.html">Cierre</a>
   </nav>
@@ -215,9 +221,10 @@
 
   <main class="slide small">
     <!-- etiqueta "Pregunta 3" -->
-    <div class="qtag">Pregunta 3</div>
-
-    <h1 class="tit">Aplicación práctica</h1>
+    <div class="tit-container">
+      <span class="qtag">Pregunta 3</span>
+      <h1 class="tit">Aplicacióno práctica</h1>
+    </div>
 
     <div class="stage-content">
       <section class="motor-block">
